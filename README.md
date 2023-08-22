@@ -65,45 +65,45 @@
 
 ## Exercise 4: Using Git Cherry-pick
 
-Identify a specific commit that you want to apply to your current branch.
-Use the command git log to find the commit hash of the desired commit.
-Switch to the branch where you want to apply the commit using the command git checkout <target-branch>.
-Use the command git cherry-pick <commit-hash> to apply the changes from the desired commit.
-Resolve any conflicts that may arise during the cherry-pick process.
-Commit the cherry-picked changes to your branch.
+- Identify a specific commit that you want to apply to your current branch.
+- Use the command git log to find the commit hash of the desired commit.
+- Switch to the branch where you want to apply the commit using the command git checkout <target-branch>.
+- Use the command git cherry-pick <commit-hash> to apply the changes from the desired commit.
+- Resolve any conflicts that may arise during the cherry-pick process.
+- Commit the cherry-picked changes to your branch.
 
 # Advanced 2
 
 ## Exercise 1: Using Git Submodules
 
-Create a new repository called parent-repo.
-Initialize parent-repo as a Git repository using the command git init.
-Create a new repository called child-repo.
-Initialize child-repo as a Git repository using the command git init.
-Add child-repo as a submodule to parent-repo using the command git submodule add <child-repo-url>.
-Make some changes to files within child-repo.
-Commit the changes in child-repo using the command git commit -m "Commit message".
-Go back to parent-repo using the command cd ...
-Commit the change of adding child-repo as a submodule using the command git commit -m "Added child-repo submodule".
-Clone the parent-repo repository on another machine using the command git clone <parent-repo-url>.
-Initialize and update the submodule in the cloned repository using the commands git submodule init and git submodule update.
+- Create a new repository called parent-repo.
+- Initialize parent-repo as a Git repository using the command git init.
+- Create a new repository called child-repo.
+- Initialize child-repo as a Git repository using the command git init.
+- Add child-repo as a submodule to parent-repo using the command git submodule add <child-repo-url>.
+- Make some changes to files within child-repo.
+- Commit the changes in child-repo using the command git commit -m "Commit message".
+- Go back to parent-repo using the command cd ...
+- Commit the change of adding child-repo as a submodule using the command git commit -m "Added child-repo submodule".
+- Clone the parent-repo repository on another machine using the command git clone <parent-repo-url>.
+- Initialize and update the submodule in the cloned repository using the commands git submodule init and git submodule update.
 
 ## Exercise 2: Using Git Hooks
 
-Navigate to your Git repository's .git/hooks directory.
-Create a new file called pre-commit (without any file extension).
-Add a hook script in the pre-commit file to execute a custom command, such as running tests or linting, before committing.
-Make the pre-commit file executable using the command chmod +x pre-commit.
-Make some changes to a file in your repository and attempt to commit them.
-Observe that the custom command defined in your pre-commit hook script is executed before the commit is made.
+- Navigate to your Git repository's .git/hooks directory.
+- Create a new file called pre-commit (without any file extension).
+- Add a hook script in the pre-commit file to execute a custom command, such as running tests or linting, before committing.
+- Make the pre-commit file executable using the command chmod +x pre-commit.
+- Make some changes to a file in your repository and attempt to commit them.
+- Observe that the custom command defined in your pre-commit hook script is executed before the commit is made.
 
 ## Exercise 3: Using Git Reflog
 
-Make some changes to your repository and create some commits.
-Use the command git reflog to see a list of all previous HEAD positions and actions.
-Identify a previous HEAD position that you want to revisit.
-Use the command git checkout <commit-hash> to checkout the specific commit or HEAD position.
-Review your repository at that specific commit or HEAD position.
+- Make some changes to your repository and create some commits.
+- Use the command git reflog to see a list of all previous HEAD positions and actions.
+- Identify a previous HEAD position that you want to revisit.
+- Use the command git checkout <commit-hash> to checkout the specific commit or HEAD position.
+- Review your repository at that specific commit or HEAD position.
 
 ## Exercise 4: Using Git Rebase
 
