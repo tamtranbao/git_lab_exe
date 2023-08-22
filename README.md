@@ -1,92 +1,116 @@
 # Git workshop
 
+# Basic
 
+## Exercise 1: Initializing a Repository
 
-## Getting started
+- Open your terminal and navigate to the desired directory where you want to create a new repository.
+- Use the command git init to initialize a new repository.
+- Use the git status command to check the status of your repository.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Exercise 2: Adding and Committing Changes
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- Create a new file in your repository (e.g., touch file.txt).
+- Use the command git status to see the untracked file.
+- Add the file to the staging area using the command git add file.txt.
+- Use the command git status to ensure that the file has been added to the staging area.
+- Commit the changes using the command git commit -m “Add new file”.
+- Use the command git log to view the commit history.
 
-## Add your files
+## Exercise 3: Working with Branches
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+- Create a new branch using the command git branch new-branch.
+- Switch to the new branch using the command git checkout new-branch.
+- Make some changes to a file in this branch (e.g., modify file.txt).
+- Add and commit your changes in this branch.
+- Switch back to the main branch using the command git checkout main.
+- Use the command git merge new-branch to merge the changes from the new branch into the main branch.
+- Use the command git branch -d new-branch to delete the branch.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.amanotes.net/tech-coe/git-workshop.git
-git branch -M main
-git push -uf origin main
-```
+## Exercise 4: Working with Remote Repositories
 
-## Integrate with your tools
+- Create a new repository on a hosting service like GitHub.
+- Link your local repository with the remote repository using the command git remote add origin <remote-repository-url>.
+- Use the command git push -u origin main to push your local repository to the remote repository.
+- Make some changes to the file on the remote repository using the web interface.
+- Use the command git pull origin main to update your local repository with the remote changes.
 
-- [ ] [Set up project integrations](https://gitlab.amanotes.net/tech-coe/git-workshop/-/settings/integrations)
+# Advanced 1
 
-## Collaborate with your team
+## Exercise 1: Resolving Merge Conflicts
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+- Create a new branch called feature-branch using the command git checkout -b feature-branch.
+- Make some changes to a file in this branch and commit the changes.
+- Switch back to the main branch using the command git checkout main.
+- Make different changes to the same file in the main branch and commit the changes.
+- Attempt to merge the feature-branch into the main branch using the command git merge feature-branch.
+- Resolve any merge conflicts that occur in the file.
+- Use the command git status to ensure that all conflicts have been resolved.
+- Commit the merge changes and continue with the merge process.
 
-## Test and Deploy
+## Exercise 2: Reverting Commits
 
-Use the built-in continuous integration in GitLab.
+- Identify the commit you want to revert by using the command git log.
+- Use the command git revert <commit-hash> to revert the commit identified in the previous step.
+- Verify the changes by using the command git log and checking that the commit has been reverted.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## Exercise 3: Working with Stashes
 
-***
+- Make some changes to a file in your repository.
+- Use the command git stash to temporarily save your changes.
+- Make more changes to the same file.
+- Use the command git stash list to see a list of all stashed changes.
+- Apply the changes from the stash using the command git stash apply.
+- Use the command git stash drop to remove the stash once you have applied the changes.
 
-# Editing this README
+## Exercise 4: Using Git Cherry-pick
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Identify a specific commit that you want to apply to your current branch.
+Use the command git log to find the commit hash of the desired commit.
+Switch to the branch where you want to apply the commit using the command git checkout <target-branch>.
+Use the command git cherry-pick <commit-hash> to apply the changes from the desired commit.
+Resolve any conflicts that may arise during the cherry-pick process.
+Commit the cherry-picked changes to your branch.
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+# Advanced 2
 
-## Name
-Choose a self-explaining name for your project.
+## Exercise 1: Using Git Submodules
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Create a new repository called parent-repo.
+Initialize parent-repo as a Git repository using the command git init.
+Create a new repository called child-repo.
+Initialize child-repo as a Git repository using the command git init.
+Add child-repo as a submodule to parent-repo using the command git submodule add <child-repo-url>.
+Make some changes to files within child-repo.
+Commit the changes in child-repo using the command git commit -m "Commit message".
+Go back to parent-repo using the command cd ...
+Commit the change of adding child-repo as a submodule using the command git commit -m "Added child-repo submodule".
+Clone the parent-repo repository on another machine using the command git clone <parent-repo-url>.
+Initialize and update the submodule in the cloned repository using the commands git submodule init and git submodule update.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Exercise 2: Using Git Hooks
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Navigate to your Git repository's .git/hooks directory.
+Create a new file called pre-commit (without any file extension).
+Add a hook script in the pre-commit file to execute a custom command, such as running tests or linting, before committing.
+Make the pre-commit file executable using the command chmod +x pre-commit.
+Make some changes to a file in your repository and attempt to commit them.
+Observe that the custom command defined in your pre-commit hook script is executed before the commit is made.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Exercise 3: Using Git Reflog
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Make some changes to your repository and create some commits.
+Use the command git reflog to see a list of all previous HEAD positions and actions.
+Identify a previous HEAD position that you want to revisit.
+Use the command git checkout <commit-hash> to checkout the specific commit or HEAD position.
+Review your repository at that specific commit or HEAD position.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## Exercise 4: Using Git Rebase
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Create a new branch called feature-branch using the command git checkout -b feature-branch.
+- Make some changes and commit them to the feature-branch.
+- Switch back to the main branch using the command git checkout main.
+- Make a new commit in the main branch.
+- Use the command git rebase main feature-branch to rebase the feature-branch onto the main branch.
+- Resolve any conflicts that may occur during the rebase process.
+- Use the command git log to verify that the changes from the feature-branch have been applied to the main branch.
